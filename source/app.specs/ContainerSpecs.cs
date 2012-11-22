@@ -17,12 +17,20 @@ namespace app.specs
    
     public class when_observation_name : concern
     {
+        private Because b = () => result = sut.an<FakeDependency>();
 
-      Because b = () =>
-        result = sut.an<>()
+        private It should_be_proper_type = () => result.ShouldBeOfType<FakeDependency>();
+        private It should_not_be_null = () => result.ShouldNotBeNull();
 
-      It first_observation = () =>        
+        private static FakeDependency result;        
+
         
     }
+  }
+
+
+  public class FakeDependency
+  {
+      
   }
 }
